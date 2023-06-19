@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Каталог')
+@section('title', $category->name)
 
 @section('content')
 <!-- Start Hero Section -->
@@ -9,7 +9,7 @@
         <div class="row justify-content-between">
             <div class="col-lg-5">
                 <div class="intro-excerpt">
-                    <h1>Каталог</h1>
+                    <h1>Shop</h1>
                 </div>
             </div>
             <div class="col-lg-7">
@@ -24,13 +24,15 @@
     <div class="container">
         <div class="row">
 
-            @foreach($categories as $category)
-                <div class="col-12 col-md-4 col-lg-3 mb-5">
-                    <a class="product-item" href="{{ route('category', $category->code) }}">
-                        <img src="images/product-3.png" class="img-fluid product-thumbnail">
-                        <h3 class="product-title">{{ $category->name }}</h3>
-                    </a>
-                </div>
+            <div class="col-12">
+                <h1>{{ $category->name }}</h1>
+                <span>
+                    {{ $category->description }}
+                </span>
+            </div>
+
+            @foreach($category->products as $product)
+                @include('card', compact('product'))
             @endforeach
 
         </div>
