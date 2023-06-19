@@ -222,8 +222,12 @@ a {
     .product-section .product-item h3, .product-section .product-item strong {
       color: #2f2f2f;
       text-decoration: none; }
+    .product-section .product-item a {
+        text-decoration: none;
+    }
     .product-section .product-item .icon-cross {
       position: absolute;
+      text-decoration: none;
       width: 35px;
       height: 35px;
       display: inline-block;
